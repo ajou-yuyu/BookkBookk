@@ -1,8 +1,5 @@
-
 function App() {
-  return (
-    print("Hello")
-  );
+  return;
 }
 
 export default App;
