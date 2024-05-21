@@ -9,7 +9,7 @@ import BookDetailPage from "./components/Main/BookDetailPage";
 import ReviewPage from "./components/Main/ReviewPage";
 import MyPage from "./components/MyPage/MyPage";
 import BucketListPage from "./components/MyPage/BucketListPage";
-// import ReviewsPage from './components/MyPage/ReviewsPage';
+import ReviewListPage from "./components/MyPage/ReviewListPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./styles/global.css";
@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/review/:id" element={<ReviewPage />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/bucketlist" element={<BucketListPage />} />
-        <Route path="/review" element={<ReviewPage />} />
+        <Route path="/review" element={<ReviewListPage />} />
       </Routes>
       <Footer />
     </Router>

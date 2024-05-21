@@ -1,57 +1,76 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "../../styles/login.css";
+import readsomebookk from "../../assets/readsomebookk.png";
 
 const useInput = (defaultValue) => {
   const [value, setValue] = useState(defaultValue);
   const onChange = (e) => {
-    // setValue를 통해 값이 변할 때마다 onChange를 통해 최신 값 가져옴
     setValue(e.target.value);
   };
   return {
-    // 함수 실행
     value,
     onChange,
   };
 };
 
 const LoginPage = () => {
-  const id = useInput("");
-  const pw = useInput("");
+  const [inputId, setInputId] = useState("");
+  const [inputPw, setInputPw] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // input data 의 변화가 있을 때마다 value 값을 변경해서 useState 해준다
+  const handleInputId = (e) => {
+    setInputId(e.target.value);
+  };
+
+  const handleInputPw = (e) => {
+    setInputPw(e.target.value);
+  };
+
+  // login 버튼 클릭 이벤트
+  const onClickLogin = () => {
+    console.log("click login");
+  };
+
+  const handleSignupClick = () => {
+    navigate("/signup");
   };
 
   return (
-    <div className="login-page">
-      <div className="login-container">
-        <h1 className="logo">
-          Bookk
-          <br />
-          Bookk
-          <form onSubmit={handleSubmit}>
-            <ul style={{ listStyleType: "none", padding: 0 }}>
-              <li>
-                <div className="input-box">
-                  <label htmlFor="userid">아이디</label>
-                  <input type="text" name="userid" {...id}></input>
-                </div>
-              </li>
-              <li>
-                <div className="input-box">
-                  <label htmlFor="password">비밀번호</label>
-                  <input type="password" name="password" {...pw}></input>
-                </div>
-              </li>
-
-              <li>
-                <div className="input-box">
-                  <input className="submit" type="submit" value="가입"></input>
-                </div>
-              </li>
-            </ul>
-          </form>
-        </h1>
+    <div className="element">
+      <div className="div">
+        <div className="overlap-left">
+          <img className="img" alt="Element" src={readsomebookk} />
+        </div>
+        <div className="overlap-right">
+          <div className="login-text">LOGIN</div>
+          <div className="input-box">
+            <label htmlFor="userid">아이디</label>
+            <input
+              type="text"
+              name="input_id"
+              value={inputId}
+              onChange={handleInputId}
+            />
+          </div>
+          <div className="input-box">
+            <label htmlFor="password">비밀번호</label>
+            <input
+              type="password"
+              name="input_pw"
+              value={inputPw}
+              onChange={handleInputPw}
+            />
+          </div>
+          <button className="submit" type="submit" onClick={onClickLogin}>
+            로그인
+          </button>
+          <div className="sign" onClick={handleSignupClick}>
+            회원가입 하기
+          </div>
+        </div>
       </div>
     </div>
   );
