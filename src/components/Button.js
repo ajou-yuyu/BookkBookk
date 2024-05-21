@@ -10,9 +10,7 @@ const Button = ({ onClick, disabled, children }) => (
       padding: '10px 20px',
       fonSize: '32px',
       cursor: 'pointer',
-      border: '1px black solid',
-      ß
-
+      border: '1px black solid'
 
     }}
   >

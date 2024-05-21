@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Holtwood One SC';
+  src: url('../assets/fonts/HoltwoodOneSC-Regular.ttf');
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #FFF7D6;
+}
+
+
+.logo {
+  position: relative;
+  /* top: -100px; */
+  font-size: 50;
+  font-family: 'Holtwood One SC';
+  font-weight: 400;
+  color: #FFE16F;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  -webkit-text-stroke: 1.2px #B49178;
+}
+
+
+li {
+  margin-bottom: 38px;
+}
+
+.input-box {
+  width: 550px;
+  height: 50px;
+  padding: 8px;
+  /* 테두리와 입력 필드 사이의 간격을 조절하기 위해 패딩 추가 */
+  background: white;
+  border-radius: 10.06px;
+  border: 2px solid #B49178;
+  /* 테두리 추가 */
+  box-sizing: border-box;
+  /* 테두리와 내용의 크기를 동일하게 만들기 위해 박스 크기 설정 */
+}
+
+.input-box input {
+  /* width: calc(100% - 4px);
+  /* 테두리 두께를 고려하여 너비 조정 */
+  /* height: calc(100% - 4px);
+  테두리 두께를 고려하여 높이 조정 */
+  margin-left: 10px;
+  border: none;
+  /* 내부 input 요소에는 테두리 없음 */
+}
+
+.input-box label {
+  color: #B49178;
+}
+
+.input-box input.submit {
+  color: #B49178;
+}
